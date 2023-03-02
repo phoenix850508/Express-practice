@@ -18,10 +18,26 @@
   <div class="border-container">
     <header>
       <nav class="nav-bar">
+        {{#if home}}
+        <div class="home"><a href="/" class="active link link-home">回到首頁</a></div>
+        {{else}}
         <div class="home"><a href="/" class="link link-home">回到首頁</a></div>
+        {{/if}}
+        {{#if about}}
+        <div class="about"><a href="/about" class="active link link-about">About</a></div>
+        {{else}}
         <div class="about"><a href="/about" class="link link-about">About</a></div>
+        {{/if}}
+        {{#if portfolio}}
+        <div class="portfolio"><a href="/portfolio" class="active link link-portfolio">Portfolio</a></div>
+        {{else}}
         <div class="portfolio"><a href="/portfolio" class="link link-portfolio">Portfolio</a></div>
+        {{/if}}
+        {{#if contact}}
+        <div class="contact"><a href="/contact" class="active link link-contact">Contact</a></div>
+        {{else}}
         <div class="contact"><a href="/contact" class="link link-contact">Contact</a></div>
+        {{/if}}
       </nav>
       {{{ body }}}
     </header>

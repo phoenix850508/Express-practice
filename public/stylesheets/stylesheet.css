@@ -46,3 +46,8 @@ p {
   margin-left: 10px;
   font-size: 30px;
 }
+
+.active {
+  color: #fff;
+  background: #101010;
+}

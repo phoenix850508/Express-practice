@@ -8,24 +8,29 @@ const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+
 // setting static files
 app.use(express.static('public'));
 
 // routes setting
 app.get('/', (req, res) => {
-  res.render('index');
+  const home_path = (req.path === "/") || false;
+  res.render('index', { home: home_path })
 })
 
 app.get('/about', (req, res) => {
-  res.render('about');
+  const about_path = (req.path === "/about") || false;
+  res.render('about', { about: about_path });
 })
 
 app.get('/portfolio', (req, res) => {
-  res.render('portfolio');
+  const portfolio_path = (req.path === "/portfolio") || false;
+  res.render('portfolio', { portfolio: portfolio_path });
 })
 
 app.get('/contact', (req, res) => {
-  res.render('contact');
+  const contact_path = (req.path === "/contact") || false;
+  res.render('contact', { contact: contact_path });
 })
 
 // start and listen on the Express server
